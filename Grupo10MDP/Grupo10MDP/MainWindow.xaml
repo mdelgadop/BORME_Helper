@@ -1,0 +1,20 @@
+﻿<Window x:Class="Grupo10MDP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:resources="clr-namespace:Grupo10MDP.Resources"
+        mc:Ignorable="d"
+        Title="{x:Static resources:ScreenResources.BORMEAssistant}" Height="375" Width="300">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" Margin="10, 10, 0, 0">
+            <Label Content="{x:Static resources:ScreenResources.SelectDate}" Margin="0, 10, 0, 0" />
+            <Calendar Name="cldMainCalendar" SelectedDate="{Binding SelectedDate, Mode=TwoWay}" CalendarDayButtonStyle="{Binding CalendarStyle, Mode=TwoWay}" />
+
+            <Label Content="{x:Static resources:ScreenResources.SelectProvincia}" Margin="0, 15, 0, 0" />
+            <ComboBox VerticalAlignment="Top" ItemsSource="{Binding Provincias}" SelectedValue="{Binding SelectedProvincia}" />
+
+            <Button VerticalAlignment="Top" Command="{Binding DownloadDocument}" Content="{x:Static resources:ScreenResources.DownloadAndMark}" Margin="0, 15, 0, 0" />
+        </StackPanel>
+    </Grid>
+</Window>
